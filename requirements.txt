@@ -1,2 +1,2 @@
 Django>=4.1,<4.2
-# Aquí agregaremos más dependencias a medida que el proyecto crezca
+django-vite

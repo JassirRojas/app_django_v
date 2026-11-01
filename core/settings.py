@@ -38,7 +38,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'cuentas',
+    'django_vite',
 ]
+
+# Configuracion de Vite.js
+DJANGO_VITE = {
+    "default": {
+        "dev_mode": True
+    }
+}
 
 LOGIN_REDIRECT_URL = 'dashboard'
 LOGOUT_REDIRECT_URL = 'login'
