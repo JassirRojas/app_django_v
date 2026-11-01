@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión</title>
+    <!-- Aquí luego conectaremos Vite.js y CSS -->
+</head>
+<body>
+    <header>
+        <h2>Aplicación Web - Desarrollo I</h2>
+        {% if user.is_authenticated %}
+            <p>Bienvenido, {{ user.username }} | <a href="{% url 'logout' %}">Cerrar Sesión</a></p>
+        {% endif %}
+    </header>
+
+    <main>
+        <!-- Aquí se inyectará el contenido de las otras páginas -->
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>
