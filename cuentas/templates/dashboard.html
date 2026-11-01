@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h3>Panel de Control</h3>
+    
+    <!-- Lógica de renderizado según los roles (Requisito B.8) -->
+    {% if es_admin %}
+        <div style="background-color: #ffcccc; padding: 10px;">
+            <h4>Sección del Administrador</h4>
+            <p>Tienes acceso total. Puedes gestionar la base de datos y usuarios.</p>
+        </div>
+    {% elif es_gestor %}
+        <div style="background-color: #ccffcc; padding: 10px;">
+            <h4>Sección del Gestor</h4>
+            <p>Puedes editar contenido y gestionar algunas métricas del sistema.</p>
+        </div>
+    {% elif es_usuario %}
+        <div style="background-color: #ccccff; padding: 10px;">
+            <h4>Sección del Usuario</h4>
+            <p>Bienvenido a tu perfil estándar. Aquí puedes ver tu información.</p>
+        </div>
+    {% else %}
+        <div style="background-color: #f0f0f0; padding: 10px;">
+            <h4>Usuario sin grupo asignado</h4>
+            <p>Comunícate con el Administrador para que te asigne un rol.</p>
+        </div>
+    {% endif %}
+{% endblock %}
